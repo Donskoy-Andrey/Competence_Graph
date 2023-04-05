@@ -1,20 +1,15 @@
-from src.params import *
 import pytesseract
 from pdf2image import convert_from_path
-import glob
 
 
-def get_ocr_file(path: str) -> str:
-    pdfs = glob.glob(rf"{path}")
-    pytesseract.pytesseract.tesseract_cmd = TESSERACT_EXE
-    tessdata_dir_config = TESSERACT_DATA
-    poppler_path = TESSERACT_POPPLER
+def get_ocr_file(pdf_path: str) -> str:
+    # Convert the PDF to an image
+    images = convert_from_path(pdf_path)
 
-    all_text = []
-    for pdf_path in pdfs:
-        pages = convert_from_path(pdf_path, 500, poppler_path=poppler_path)
-        for pageNum, imgBlob in enumerate(pages):
-            text = pytesseract.image_to_string(imgBlob, lang='rus', config=tessdata_dir_config)
-            all_text.append(text)
-    return ' '.join(all_text)
+    # Loop through all the pages and extract text using pytesseract
+    text = ""
+    for page in images:
+        page_text = pytesseract.image_to_string(page, lang='rus+eng')
+        text += page_text
 
+    return text

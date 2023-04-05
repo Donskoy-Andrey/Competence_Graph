@@ -61,6 +61,11 @@ Then entering name of the pdf-file from **data/test_folder**. For example:
 data/result/result.xlsx
 ```
 
+5. Run OCR
+```linux
+cd /usr/share/tesseract-ocr/4.00/tessdata
+wget https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
 
+```
 </details>
 
