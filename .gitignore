@@ -8,5 +8,6 @@ data/original_data/mydict/*.pdf
 
 data/processed_data/articles/*.txt
 data/processed_data/mydict/*.txt
+data/processed_data/test_folder/*.txt
 
 data/clear_text.txt

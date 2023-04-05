@@ -61,16 +61,16 @@ Then entering name of the pdf-file from **data/test_folder**. For example:
 data/result/result.xlsx
 ```
 
-5. Run OCR
+5. Install Tesseract-OCR to get opportunity to work with unreadble pdf-files (e.g. broken encoding).
 
+5.1. Install Tesseract:
 ```linux
 sudo apt-get install tesseract-ocr
 ```
 
+5.2. Install Russian language:
 ```linux
-cd /usr/share/tesseract-ocr/4.00/tessdata
-wget https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
-
+sudo wget -P /usr/share/tesseract-ocr/4.00/tessdata https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
 ```
 </details>
 
