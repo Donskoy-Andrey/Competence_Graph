@@ -32,6 +32,6 @@ if __name__ == '__main__':
     for path in articles_files:
         print(path)
         file_number = int(str(path)[23:-5])
-        extract_txt(path, folder='articles_txt')
+        extract_txt(path, folder='articles')
 
 

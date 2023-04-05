@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 mydict = Path(r'data/mydict_txt')
-articles = Path(r'data/articles_txt')
+articles = Path(r'data/articles')
 mydict_files = sorted(list(mydict.rglob('*.txt')))
 articles_files = sorted(list(articles.rglob('*.txt')))
 
