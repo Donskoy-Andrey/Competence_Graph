@@ -27,11 +27,11 @@ def extract_txt(path: Path, folder: str, return_value: bool = False) -> str:
 if __name__ == '__main__':
     for path in mydict_files:
         print(path)
-        extract_txt(path, folder='mydict_txt')
+        extract_txt(path, folder='mydict')
 
     for path in articles_files:
         print(path)
         file_number = int(str(path)[23:-5])
-        extract_txt(path, folder='articles_txt')
+        extract_txt(path, folder='articles')
 
 

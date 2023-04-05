@@ -2,8 +2,8 @@ from src2.data_processing import file_processing
 from pathlib import Path
 
 
-mydict = Path(r'data/mydict_txt')
-articles = Path(r'data/articles_txt')
+mydict = Path(r'data/mydict')
+articles = Path(r'data/articles')
 mydict_files = sorted(list(mydict.rglob('*.txt')))
 articles_files = sorted(list(articles.rglob('*.txt')))
 

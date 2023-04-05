@@ -1,0 +1,752 @@
+4 
+
+УДК 622.276 
+
+ОПТИМИЗАЦИЯ РЕЖИМА СЖИГАНИЯ УГЛЕВОДОРОДНОГО 
+
+ПОПУТНОГО ГАЗА В ФАКЕЛАХ 
+
+OPTIMIZATION OF COMBUSTION MODE OF HYDROCARBON 
+
+ASSOCIATED GAS IN TORCHES 
+
+И.Х. Асадов  
+
+Национальное аэрокосмическое агентство,  
+
+г. Баку, Азербайджанская Республика 
+
+Ilgar H. Asadov 
+
+National Aerospace Agency, Baku, Azerbaijan Republic 
+
+e-mail: asadzade@rambler.ru  
+
+Аннотация.  Статья  посвящена  вопросам  оптимизации  сжигания 
+
+углеводородного попутного газа в факелах. Целью статьи является разработка 
+
+нового  метода  для  определения  условий  минимизации  эмиссии  сажи  при 
+
+сжигании  углеводородного  попутного  газа.  Основное  внимание  уделено 
+
+вопросам аэрозольного загрязнения воздуха в зонах сжигания углеводородного 
+
+попутного газа. Предлагается новый метод оптимизации, базирующийся на том 
+
+факте,  что  объем  эмитируемой  сажи  оказывается  экстремальной  функцией 
+
+показателя  Фрауде.  Получено  условие,  при  выполнении  которого  целевой 
+
+функционал, характеризующий общее количество эмитируемого в атмосферу 
+
+аэрозоля,  достигает  минимума.  При  этом  обеспечивается  минимально 
+
+возможная среднеинтегральная величина аэрозольной эмиссии при факельном 
+
+сжигании углеводородного попутного газа. 
+
+Представлены  базовые  сведения  о  методе  Деличатсиоса,  Макивена  и 
+
+Джонсона. Данный метод базируется на том факте, что объем эмитируемой 
+
+сажи  является  экстремальной  функцией  показателя  Фрауде.  Показатель 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+5 
+
+Фрауде  является  безразмерной  величиной,  характеризующей  динамику 
+
+развития пламени. 
+
+Разработан  новый  метод  для  определения  условий  минимизации 
+
+эмиссии сажи при сжигании углеводородного попутного газа, основанный 
+
+на  нахождении 
+
+экстремальной 
+
+величины  показателя  Фрауде  и 
+
+обеспечивающий появление минимальной эмиссии аэрозоля. 
+
+Abstract.  The  article  is  devoted  to  the  optimization  of  the  combustion  of 
+
+hydrocarbon associated gas in flares. The purpose of the article is to develop a 
+
+new method for determining the conditions for minimizing soot emission during 
+
+combustion of hydrocarbon associated gas. The main attention is paid to the issues 
+
+of aerosol air pollution in the zones of combustion of hydrocarbon associated gas. 
+
+A  new  optimization  method  is  proposed  based  on  the  fact  that  the  volume  of 
+
+emitted  soot  turns  out  to  be  an  extreme  function  of  the  Fraude  exponent.  A 
+
+condition is obtained under which the target functional, which characterizes the 
+
+total amount of aerosol emitted into the atmosphere, reaches a minimum. At the 
+
+same  time,  the  minimum  possible  average  integral  value  of  aerosol  emission 
+
+during flaring combustion of hydrocarbon associated gas is ensured. 
+
+Basic information about the method of Delichatsios, Machiven and Johnson 
+
+is presented. This method is based on the fact that the volume of emitted soot is 
+
+an  extreme  function  of  the  Fraude  exponent.  The  Fraude  exponent  is  a 
+
+dimensionless quantity that characterizes the dynamics of flame development. 
+
+A new method has been developed to determine the conditions for minimizing 
+
+the emission of soot during the combustion of hydrocarbon associated gas, based 
+
+on finding the extreme value of the Fraude exponent and ensuring the appearance 
+
+of the minimum emission of aerosol. 
+
+Ключевые  слова:  попутный  газ;  аэрозоль;  оптимизация;  атмосфера; 
+
+показатель Фрауде 
+
+Keywords:  associated  gas;  spray  can;  optimization;  atmosphere;  Fraude 
+
+exponent 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+6 
+
+Введение 
+
+Сжигание  попутного  углеводородного  газа  является  глобально 
+
+используемым  методом  для  удаления  токсичного  или  коррозионного 
+
+горючего  газа  путем  превращения  его  в  менее  реактивные  составляющие, 
+
+реализуемым в зонах нефтепроизводства или нефтепереработки. 
+
+Согласно [1], только в 2008 г. в результате сжигания газа в атмосферу 
+
+поступило 267.3 млн т СО2. 
+
+Контроль  над  объемами  сжигаемого  газа  осуществляется  спутниками 
+
+DMSP,  с  помощью  которых  в  2012  г.  обнаружены  7467  единиц  факелов, 
+
+сжигающих  газ.  Сжигание  газа  приводит  к  аэрозольному  загрязнению 
+
+воздуха,  увеличению  концентрации  тяжелых  металлов  на  поверхности 
+
+близлежащих  водоемов,  повышает  вероятность  возникновения  кислотных 
+
+дождей и т.д. [1]. 
+
+Далее в статье основное внимание будет уделено вопросам аэрозольного 
+
+загрязнения воздуха в зонах сжигания углеводородного  попутного газа.  
+
+В  настоящей  время  имеются  различные  оценки  эмиссии  с  факелов 
+
+сжигания  газа  аэрозоля  типа  «черный  углерод»  (ВС),  или  сажа.  Так 
+
+например, согласно [2], этот показатель равен 1.6 г/м3. Однако согласно [3], 
+
+этот показатель равен 0.57±0.14 г/м3. В то же время в [4] приводится цифра 
+
+0.28  г/м3.  Согласно  [5],  объем  эмитируемого  ВС  прямо  зависит  от 
+
+температуры  факела,  т.к.  при  высокой  температуре  происходит  полное 
+
+сгорание газа (рисунок 1). 
+
+Согласно  [6],  количество  эмиссии  аэрозоля  в  окружающую  среду 
+
+зависит  от  таких  факторов,  как  отношение  масса  воздух  /  масса  топлива; 
+
+состав  топливного  газа;  скорость  подачи  газа;  эффективность  сжигания; 
+
+состояние внешней среды и др. Что касается эмитируемой при этом сажи, 
+
+то этот тип аэрозоля является вторым по значимости после СО2 фактором, 
+
+приводящим к появлению «парникового эффекта». 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+ 
+7 
+
+Рисунок 1. Зависимость объемов эмиссии ВС от температуры факела 
+сжигания газа [5] 
+
+Целью  настоящей  статьи  является  разработка  нового  метода  для 
+
+определения  условий  минимизации  эмиссии  сажи  при  сжигании 
+
+углеводородного попутного газа. 
+
+Предлагаемый метод  основывается на известном методе Деличатсиоса 
+
+[7], Макивена и Джонсона [8], базирующемся на анализе показателя Фрауде. 
+
+Вкратце рассмотрим основные положения этого метода. 
+
+Базовые сведения о методе Деличатсиоса Макивена и Джонсона 
+
+Данный  метод  базируется  на  том  факте,  что  объем  эмитируемой  сажи 
+
+является экстремальной функцией показателя Фрауде (рисунок 2). 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+ 
+8 
+
+Рисунок 2. Экстремальное свойство функциональной зависимости объема 
+эмиссии сажи при сжигании углеводородного попутного газа от значения 
+показателя Фрауде [7] 
+
+Показатель 
+
+Фрауде 
+
+является 
+
+безразмерной 
+
+величиной, 
+
+характеризующей динамику развития пламени и определяется следующим 
+
+образом: 
+
+где  
+
+  , 
+
+(1) 
+
+  , 
+
+(2)  
+
+где   S – отношение масса воздуха / масса топлива; 
+
+Ve – скорость подачи газа (м/с); 
+
+Tamb – температура окружающей среды, K;  
+
+Тθ – адиабатическая температура, K;  
+
+ΔTf – прирост температуры пламени, K, определяемый как  
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+412123aeeambfsergdTTfVFsfaS11 
+ 
+ 
+9 
+
+ΔTf  = Тθ – Тamb; 
+
+g – ускорение свободного падения, м/с2; 
+
+de – диаметр трубы, м; 
+
+ρa, ρe – плотность воздуха и плотность сжигаемого газа, кг/м3; 
+
+φ – отношение эквивалентности, определяемое как 
+
+ , 
+
+(3) 
+
+где 
+
+ – стехиометрическая смесь воздух – газ, необходимая для полного 
+
+сгорания газа;  
+
+ – фактическая величина смеси воздух – газ; 
+
+fs – фракция стехиометрической смеси. 
+
+На  рисунке  3  приведены  экспериментально  снятые  кривые  объема 
+
+эмиссии сажи от Fr при разных значениях de. 
+
+Как  видно  из  кривых,  представленных  на  рисунке  3,  диаметр  трубы 
+
+является  существенным  фактором,  влияющим  на  объемы  эмиссии  сажи  в 
+
+атмосферу. В то же время, как видно из рисунков 2 и 3, при малых и больших 
+
+значениях Fr следует ожидать меньших значений эмиссии сажи.  
+
+С  учетом 
+
+вышеизложенного  предлагается  метод  нахождения 
+
+экстремальной  величины    Fr,  обеспечивающий  появление  минимальной 
+
+эмиссии аэрозоля. 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+aSFAFASFAaFA 
+ 
+ 
+10 
+
+Рисунок 3. Экспериментально снятые кривые зависимости объема 
+эмиссии сажи от значения показателя Фрауде при разных значениях de [7] 
+
+Предлагаемый метод 
+
+Предлагаемый метод основывается на следующих положениях. 
+
+1. Наличие следующих множеств:  
+
+a) множество D, определяемое как  
+
+b) множество T, определяемое как 
+
+; 
+
+2. Существование взаимно однозначной функциональной зависимости 
+
+(4) 
+
+физически означающей возможность выбора диаметра трубы в зависимости 
+
+от значения показателя ΔTf. 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+niDTdei,1;njTTfj,1;),(defT 
+ 
+ 
+ 
+ 
+3. Допускаем, что функция φ(de) удовлетворяет условию 
+
+в дискретной записи и 
+
+11 
+
+(5) 
+
+(6) 
+
+в непрерывной форме записи. 
+
+4. Выдвигается требование приведения среднеинтегральной величины 
+
+  . 
+
+(7)  
+
+к экстремальной (максимум или минимум) величине. Для выполнения этого 
+
+требования  c  учетом  условия  (6)  должна  быть  вычислена  оптимальная 
+
+функция φ(de), при которой Fr.cp → extr.  
+
+Проведем модельное исследование по реализации данного метода. 
+
+Модельное исследование 
+
+С  учетом  выражений  (1),  (6)  и  (7)  составим  целевой  функционал 
+
+вариационной оптимизации: 
+
+, 
+
+ (8) 
+
+где 
+
+. 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+nieiconstCCd1;)(max110());(eeeddconstddCC)(1max0max.edrrcprddFFFemXdxxydxxaaxxyaФ0032121)()(maxfeaeambSeTydxagTafVa;;;;32321 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Приняв 
+
+, функционал (8) перепишем как 
+
+12 
+
+ . 
+
+(9) 
+
+Согласно [9], решение задачи y(x)opt, при котором Ф → extremum, должно 
+
+удовлетворять условию 
+
+Из (10) получим 
+
+Из (11) находим 
+
+С учетом выражений (6) имеем 
+
+Из (12) и (13) находим 
+
+ . 
+
+(10) 
+
+. 
+
+(11) 
+
+  . 
+
+(12) 
+
+. 
+
+(13) 
+
+. 
+
+(14) 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+3214aaaaeddxxydxy(x)xaФed4maxmax00)(0)(21234xyxaxxya2)(2343423233482)(axaxxyconstCCdxxymX0;)(CdxaxmX03423238 
+ 
+ 
+ 
+ 
+ 
+ 
+Из (14) имеем 
+
+13 
+
+С учетом выражений (12) и (15) получим 
+
+ . 
+
+(15) 
+
+ . 
+
+(16) 
+
+Таким  образом,  при  решении  (16)  целевой  функционал  (8)  достигает 
+
+экстремума.  Для  определения  типа  экстремума  достаточно  взять  вторую 
+
+производную интегранта в (8) по искомой функции. При этом полученный 
+
+результат, указывающий на положительный знак второй производной (8) по 
+
+искомой функции, свидетельствует о том, что функционал достигает своего 
+
+минимума. 
+
+Заключение 
+
+Таким  образом,  с  учетом  выражения  (16)  можно  утверждать,  что  при 
+
+решении 
+
+показатель  Fr  достигает  минимума.  При  этом  согласно  графику, 
+
+показанному  на  рисунке  2,  будет  обеспечена  минимально  возможная 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+32034238mXdxaxCmmXXdxxxCaxdxaxCxy0232334230342388)(mXeefdxddCT02323 
+ 
+ 
+среднеинтегральная  величина  аэрозольной  эмиссии  при  факельном 
+
+сжигании углеводородного попутного газа. 
+
+14 
+
+Выводы 
+
+Представлены  базовые  сведения  о  методе  Деличатсиоса,  Макивена  и 
+
+Джонсона. Данный метод базируется на том факте, что объем эмитируемой 
+
+сажи  является  экстремальной  функцией  показателя  Фрауде.  Показатель 
+
+Фрауде  является  безразмерной  величиной,  характеризующей  динамику 
+
+развития пламени. 
+
+Разработан  новый  метод  для  определения  условий  минимизации 
+
+эмиссии сажи при сжигании углеводородного попутного газа, основанный 
+
+на  нахождении 
+
+экстремальной 
+
+величины  показателя  Фрауде  и 
+
+обеспечивающий появление минимальной эмиссии аэрозоля. 
+
+Список используемых источников 
+
+1. Deetz K., Vogel B. Development of a New Gas – Flaring Emission Dataset 
+
+for  Southern  West  Africa  //  Geoscientific  Model  Development.  2017.  Vol.  10. 
+
+Issue 4. P. 1607-1620. DOI: 10.5194/gmd-10-1607-2017. 
+
+2. Stohl A., Klimont Z., Eckhardt S., Kupiainen K., Shevcenko V.P., Kopeikin 
+
+V.M., Novigatsky A.N. Black Carbon in the Arctic: the Underestimated Role of 
+
+Gas  Flaring  and  Residential  Combustion  Emissions  //  Atmospheric  Chemistry 
+
+and Physic. 2013. Vol. 13. P. 8833-8855. DOI: 10.5194/acp-13-8833-2013. 
+
+3. Schwarz  J.P.,  Holloway  J.S.,  Katich  J.M.,  McKeen  S.,  Kort  E.A., 
+
+Smith M.L., Ryerson T.B., Sweeney C., Peischl J. Black Carbon Emissions from 
+
+the  Bakken  Oil  and  Gas  Development  Region  //  Environmental  Science  and 
+
+Technology  Letters.  2015.  Vol.  2. 
+
+Issue  10.  P.  281-285.  DOI: 
+
+10.1021/acs.estlett.5b00225. 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+15 
+
+4. Johnson M.R., Devillers R.W., Thomson K.A. A Generalized Sky-LOSA 
+
+Method to Quantify Soot/Black Carbon Emission Rates in Atmospheric Plumes 
+
+of Gas Flares // Aerosol Science and Technology. 2012. Vol. 47. Issue 9. P. 1017-
+
+1029. DOI: 10.1080/02786826.2013.809401. 
+
+5. Caseiro A., Gehrke B., Rusker G., Leimbach D., Kaiser J.W. Gas Flaring 
+
+Activity and Black Carbon Emissions in 2017 Derived from Sentinel-3A SLSTR 
+
+// 
+
+Earth 
+
+System 
+
+Science 
+
+Data 
+
+Discussions. 
+
+2019. 
+
+URL: 
+
+https://essd.copernicus.org/preprints/essd-2019-99/essd-2019-99.pdf 
+
+(дата 
+
+обращения: 25.04.2021). DOI: 10.5194/essd-2019-99. 
+
+6. Fawole  O.G.,  Cai  X.M.,  Nikolova  I.,  McKenzine  A.R.  Self-Consistent 
+
+Estimates of Emission Factors of Carboncontaining Pollutants from a Typical Gas 
+
+Flare  //  Ife  Journal  o  Science.  2020.  Vol.  22.  No.  2.  P.  135-149.  DOI: 
+
+10.4314/ijs.v22i2.13. 
+
+7. Delichatsios  M.  Transition  from  Momentum  to  Buoyancy-Controlled 
+
+Turbulent Jet Diffusion  Flames and  Flame Height Relationships // Combustion 
+
+and Flame. 1993. Vol. 92. Issue 4. P. 349-364. 
+
+8. McEwen  J.D.,  Johnson  M.R.  Black  Carbon  Particulate  Matter  Emission 
+
+Factors  for  Buoyancy  –  Driven  Associated  //  Journal  of  the  Air  and  Waste 
+
+Management  Association.  2012.  Vol.  62.  Issue  3.  P.  307-321.  DOI: 
+
+10.1080/10473289.2011.650040. 
+
+9. Эльсгольц  Л.П.  Дифференциальные  уравнения  и  вариационное 
+
+исчисление. М.: Наука, 1974. 432 с. 
+
+References 
+
+1. Deetz K., Vogel B. Development of a New Gas – Flaring Emission Dataset 
+
+for  Southern  West  Africa.  Geoscientific  Model  Development,  2017,  Vol.  10, 
+
+Issue 4, pp. 1607-1620. DOI: 10.5194/gmd-10-1607-2017. 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+16 
+
+2. Stohl A., Klimont Z., Eckhardt S., Kupiainen K., Shevcenko V.P., Kopeikin 
+
+V.M., Novigatsky A.N. Black Carbon in the Arctic: the Underestimated Role of 
+
+Gas Flaring and Residential Combustion Emissions. Atmospheric Chemistry and 
+
+Physic, 2013, Vol. 13, pp. 8833-8855. DOI: 10.5194/acp-13-8833-2013. 
+
+3. Schwarz  J.P.,  Holloway  J.S.,  Katich  J.M.,  McKeen  S.,  Kort  E.A., 
+
+Smith M.L., Ryerson T.B., Sweeney C., Peischl J. Black Carbon Emissions from 
+
+the  Bakken  Oil  and  Gas  Development  Region.  Environmental  Science  and 
+
+Technology  Letters,  2015,  Vol.  2, 
+
+Issue  10,  pp.  281-285.  DOI: 
+
+10.1021/acs.estlett.5b00225. 
+
+4. Johnson M.R., Devillers R.W., Thomson K.A. A Generalized Sky-LOSA 
+
+Method to Quantify Soot/Black Carbon Emission Rates in Atmospheric Plumes 
+
+of Gas Flares. Aerosol Science and Technology, 2012, Vol. 47, Issue 9, pp. 1017-
+
+1029. DOI: 10.1080/02786826.2013.809401. 
+
+5. Caseiro A., Gehrke B., Rusker G., Leimbach D., Kaiser J.W. Gas Flaring 
+
+Activity and Black Carbon Emissions in 2017 Derived from Sentinel-3A SLSTR. 
+
+Earth 
+
+System 
+
+Science 
+
+Data 
+
+Discussions, 
+
+2019. 
+
+URL: 
+
+https://essd.copernicus.org/preprints/essd-2019-99/essd-2019-99.pdf 
+
+(accessed 
+
+25.04.2021). DOI: 10.5194/essd-2019-99. 
+
+6. Fawole  O.G.,  Cai  X.M.,  Nikolova  I.,  McKenzine  A.R.  Self-Consistent 
+
+Estimates of Emission Factors of Carboncontaining Pollutants from a Typical Gas 
+
+Flare.  Ife  Journal  o  Science,  2020,  Vol.  22,  No.  2,  pp.  135-149.  DOI: 
+
+10.4314/ijs.v22i2.13. 
+
+7. Delichatsios  M.  Transition  from  Momentum  to  Buoyancy-Controlled 
+
+Turbulent Jet Diffusion Flames and Flame Height Relationships. Combustion and 
+
+Flame, 1993, Vol. 92, Issue 4, pp. 349-364. 
+
+8. McEwen  J.D.,  Johnson  M.R.  Black  Carbon  Particulate  Matter  Emission 
+
+Factors  for  Buoyancy  –  Driven  Associated.  Journal  of  the  Air  and  Waste 
+
+Management  Association,  2012,  Vol.  62,  Issue  3,  pp.  307-321.  DOI: 
+
+10.1080/10473289.2011.650040. 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+9. Elsgolts  L.P.  Differentsial'nye  uravneniya  i  variatsionnoe  ischislenie 
+
+[Differential Equations and Calculus of Variations]. Moscow, Nauka Publ., 1974. 
+
+17 
+
+432 p. [in Russian]. 
+
+Сведения об авторе 
+
+About the Author 
+
+Ильгар 
+
+Хикмет 
+
+оглы 
+
+Асадов, 
+
+аспирант 
+
+Национального 
+
+аэрокосмического агентства, г. Баку, Азербайджанская Республика 
+
+Ilgar H. Asadov, Post-graduate Student of National Aerospace Agency, Baku, 
+
+Azerbaijan Republic 
+
+e-mail: asadzade@rambler.ru 
+
+© Сетевое издание «Нефтегазовое дело». 2021. №3 
+
+http://ogbus.ru 
+
+
