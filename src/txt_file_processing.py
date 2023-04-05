@@ -1,4 +1,3 @@
-import pandas as pd
 import pymorphy2
 import re
 
