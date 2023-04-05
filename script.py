@@ -1,11 +1,12 @@
 import pandas as pd
+from pathlib import Path
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+from src.transrom_pdf import articles_names
 from src.OCR import get_ocr_file
 from src.data_transfering import load_articles_data, save_articles_data
 from src.transrom_pdf import extract_txt
 from src.txt_file_processing import file_processing
-from pathlib import Path
-from sklearn.feature_extraction.text import TfidfVectorizer
-from src.transrom_pdf import articles_names
 
 n_strings = 30
 n_search_strings = 200  # n-top terms, where we search variants
@@ -69,7 +70,7 @@ def check_new_file(path: str, file_save: bool, extension: str = 'pdf') -> pd.Dat
     return xlsx_file.to_frame().reset_index().rename({'index': 'term', f'{current_file_path.name}': 'value'}, axis=1)
 
 
-def script(file_save: bool) -> None:
+def main(file_save: bool) -> None:
     check_path = SAMPLE_PATH.format(input('Enter file name from test_folder. Example: file.pdf\n'))
 
     df = check_new_file(check_path, file_save=file_save)
@@ -92,4 +93,4 @@ def script(file_save: bool) -> None:
 
 
 if __name__ == '__main__':
-    script(file_save=False)
+    main(file_save=False)
