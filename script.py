@@ -1,18 +1,18 @@
 import pandas as pd
-from src2.data_processing.OCR.OCR import get_ocr_file
-from src2.data_processing.data_transfering import load_articles_data, save_articles_data
-from src2.data_processing.transrom_pdf import extract_txt
-from src2.data_processing import file_processing
+from src.OCR import get_ocr_file
+from src.data_transfering import load_articles_data, save_articles_data
+from src.transrom_pdf import extract_txt
+from src.txt_file_processing import file_processing
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
-from src2.data_processing.transrom_pdf import articles_names
+from src.transrom_pdf import articles_names
 
 n_strings = 30
 n_search_strings = 200  # n-top terms, where we search variants
 n_add_strings = 5
 
 SAMPLE_PATH = r'data/test_folder/{}'
-PATH_TO_SAVE = r'result/result.xlsx'
+PATH_TO_SAVE = r'data/result/result.xlsx'
 NEW_STOP_PATH = r'data/new_stop.txt'
 
 
