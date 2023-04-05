@@ -18,7 +18,7 @@ def start_ocr(check_path: str) -> None:
     with open(ocr_path, 'w', encoding='utf-8') as file:
         file.write(text)
 
-    df = check_new_file(ocr_path, extension='txt')
+    df = check_new_file(ocr_path)
     all_names = df.term.head(N_SEARCH_ROWS).values
 
     df['variants'] = \
@@ -31,7 +31,7 @@ def start_ocr(check_path: str) -> None:
     df.head(N_ROWS).to_excel(PATH_TO_SAVE, encoding='utf-8')
 
 
-def check_new_file(path: str, extension: str = 'pdf') -> pd.DataFrame():
+def check_new_file(path: str) -> pd.DataFrame():
     new_articles_data = load_articles_data()
     current_file_path = Path(path)
     txt_file_path = extractor(current_file_path, folder='test_folder', return_path=True)
