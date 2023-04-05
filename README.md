@@ -28,7 +28,23 @@ clear text database:
   ```linux
   python3 script_transform_pdf.py 
   ```
-Note: you need the banch of pdf files in your **data/original_data** folder.
+Note 1: You need the banch of pdf files in your **data/original_data** folder.
+
+Note 2: If you are doing it for the first time, change the **src/params.py** parameters from
+
+```python
+START_EXTRACTION = False
+CREATE_CLEAR_TEXT = False
+```
+
+to
+
+```python
+START_EXTRACTION = True
+CREATE_CLEAR_TEXT = True
+```
+
+Parameters can be reset to their original state at a later time not to waste time processing them again.
 
 3. Run bash command in the root folder to get keywords from test file:
   ```linux
