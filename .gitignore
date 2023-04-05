@@ -1,0 +1,11 @@
+venv
+.idea/
+**/__pycache__/
+
+data/original_data/articles/*.pdf
+data/original_data/mydict/*.pdf
+
+data/processed_data/articles_txt/*.txt
+data/processed_data/mydict_txt/*.txt
+
+data/clear_text.txt
