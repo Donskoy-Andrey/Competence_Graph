@@ -62,6 +62,11 @@ data/result/result.xlsx
 ```
 
 5. Run OCR
+
+```linux
+sudo apt-get install tesseract-ocr
+```
+
 ```linux
 cd /usr/share/tesseract-ocr/4.00/tessdata
 wget https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
