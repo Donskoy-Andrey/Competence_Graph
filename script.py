@@ -2,10 +2,10 @@ import pandas as pd
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from src.transrom_pdf import articles_names
+from script_transrom_pdf import articles_names
 from src.OCR import get_ocr_file
-from src.data_transfering import load_articles_data, save_articles_data
-from src.transrom_pdf import extract_txt
+from src.data_preparing import load_articles_data, save_articles_data
+from script_transrom_pdf import extract_txt
 from src.txt_file_processing import file_processing
 
 n_strings = 30
