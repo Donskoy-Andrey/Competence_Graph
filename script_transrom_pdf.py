@@ -1,31 +1,30 @@
-from pathlib import Path
 from pdfminer.high_level import extract_text
 from src.txt_file_processing import file_processing
+from typing import Optional
+from src.params import *
 
-
-ORIGINAL_DICT_PATH = Path("data/original_data/mydict")
-ORIGINAL_ARTICLE_PATH = Path("data/original_data/articles")
-PROCESSED_DICT_PATH = Path("data/processed_data/mydict")
-PROCESSED_ARTICLE_PATH = Path("data/processed_data/articles")
-CLEAR_TEXT = "data/processed_data/clear_text.txt"
-START_EXTRACTION = True
-
-def extractor(path: Path, folder: str) -> None:
+def extractor(path: Path, folder: str, return_path: bool = False) -> Optional[str]:
     """ Extract text from pdf files """
+
     print(f"Extraction: {path}")
     file = extract_text(path)
     result_path = f"data/processed_data/{folder}/{path.name}"[:-3]+'txt'
     with open(result_path, 'w', encoding='utf-8') as f:
         f.write(file)
 
+    if return_path:
+        return result_path
+
 def load_articles_data() -> list[str]:
     """ Get all txt data """
+
     with open(CLEAR_TEXT, 'r') as file:
         articles_data = file.readlines()
     return articles_data
 
 def save_articles_data(articles_data: list, mode='w') -> None:
     """ Group txt files into CLEAR_TEXT """
+
     if mode == 'w':
         with open(CLEAR_TEXT, 'w', encoding='utf-8') as file:
             file.write('\n'.join(articles_data))
@@ -34,7 +33,7 @@ def save_articles_data(articles_data: list, mode='w') -> None:
         with open(CLEAR_TEXT, 'a', encoding='utf-8') as file:
             file.write('\n' + articles_data[-1])
 
-def start_extraction():
+def start_extraction() -> None:
     """ Start extraction process """
     mydict_files = sorted(
         list(
@@ -53,6 +52,7 @@ def start_extraction():
 
 def create_clear_txt() -> None:
     """ Save all data as a processed txt file """
+
     mydict_files = sorted(list(PROCESSED_DICT_PATH.rglob('*.txt')))
     articles_files = sorted(list(PROCESSED_ARTICLE_PATH.rglob('*.txt')))
 
@@ -61,10 +61,10 @@ def create_clear_txt() -> None:
 
     save_articles_data(articles_data)
 
+
 if __name__ == '__main__':
     if START_EXTRACTION:
         start_extraction()
 
-    create_clear_txt()
-
-
+    if CREATE_CLEAR_TEXT:
+        create_clear_txt()

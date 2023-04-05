@@ -1,15 +1,11 @@
-import pymorphy2
+from src.params import *
 import re
-
-STOPWORDS_PATH = r'data/stopwords.txt'
-punctuation = r'!\"#$%&\'()*+,./:;<=>?@[\]^_`{|}~'
-morph = pymorphy2.MorphAnalyzer()
-
-with open(STOPWORDS_PATH, 'r', encoding='utf-8') as file:
-    stop_words = [string.strip() for string in file.readlines()]
 
 
 def file_processing(path: str) -> str:
+    with open(STOPWORDS_PATH, 'r', encoding='utf-8') as file:
+        stop_words = [string.strip() for string in file.readlines()]
+
     print(f"Processing: {path}")
     with open(path, 'r', encoding='utf8') as f:
         text = [line.strip() for line in f.readlines()]

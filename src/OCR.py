@@ -1,10 +1,7 @@
+from src.params import *
 import pytesseract
 from pdf2image import convert_from_path
 import glob
-
-TESSERACT_EXE = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-TESSERACT_DATA = r'--tessdata-dir "C:\Program Files\Tesseract-OCR\tessdata"'
-TESSERACT_POPPLER = r'C:\Users\User\Downloads\poppler-0.68.0_x86\poppler-0.68.0\bin'
 
 
 def get_ocr_file(path: str) -> str:
