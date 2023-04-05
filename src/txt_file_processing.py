@@ -10,6 +10,7 @@ with open(STOPWORDS_PATH, 'r', encoding='utf-8') as file:
 
 
 def file_processing(path: str) -> str:
+    print(f"Processing: {path}")
     with open(path, 'r', encoding='utf8') as f:
         text = [line.strip() for line in f.readlines()]
         text = ' '.join(text).replace('- ', '')

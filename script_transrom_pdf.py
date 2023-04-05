@@ -1,37 +1,70 @@
 from pathlib import Path
 from pdfminer.high_level import extract_text
-
-ORIGINAL_PATH = r'data/{}'
-DICT_PATH = ORIGINAL_PATH.format(r'original_data/mydict')
-ARTICLE_PATH = ORIGINAL_PATH.format(r'original_data/articles')
-
-mydict = Path(DICT_PATH)
-articles = Path(ARTICLE_PATH)
-
-mydict_files = sorted(list(mydict.rglob('*.pdf')))
-articles_files = sorted(list(articles.rglob('*.pdf')))
-
-articles_names = [i.name for i in articles_files]
-mydict_names = [i.name for i in mydict_files]
+from src.txt_file_processing import file_processing
 
 
-def extractor(path: Path, folder: str, return_value: bool = False) -> str:
+ORIGINAL_DICT_PATH = Path("data/original_data/mydict")
+ORIGINAL_ARTICLE_PATH = Path("data/original_data/articles")
+PROCESSED_DICT_PATH = Path("data/processed_data/mydict")
+PROCESSED_ARTICLE_PATH = Path("data/processed_data/articles")
+CLEAR_TEXT = "data/processed_data/clear_text.txt"
+START_EXTRACTION = True
+
+def extractor(path: Path, folder: str) -> None:
+    """ Extract text from pdf files """
+    print(f"Extraction: {path}")
     file = extract_text(path)
-    result_path = ORIGINAL_PATH.format(f"processed_data/{folder}/{path.name}"[:-3]+'txt')
+    result_path = f"data/processed_data/{folder}/{path.name}"[:-3]+'txt'
     with open(result_path, 'w', encoding='utf-8') as f:
         f.write(file)
-    if return_value:
-        return result_path
 
+def load_articles_data() -> list[str]:
+    """ Get all txt data """
+    with open(CLEAR_TEXT, 'r') as file:
+        articles_data = file.readlines()
+    return articles_data
+
+def save_articles_data(articles_data: list, mode='w') -> None:
+    """ Group txt files into CLEAR_TEXT """
+    if mode == 'w':
+        with open(CLEAR_TEXT, 'w', encoding='utf-8') as file:
+            file.write('\n'.join(articles_data))
+
+    elif mode == 'a':
+        with open(CLEAR_TEXT, 'a', encoding='utf-8') as file:
+            file.write('\n' + articles_data[-1])
+
+def start_extraction():
+    """ Start extraction process """
+    mydict_files = sorted(
+        list(
+            ORIGINAL_DICT_PATH.rglob('*.pdf')
+        )
+    )
+    articles_files = sorted(
+        list(
+            ORIGINAL_ARTICLE_PATH.rglob('*.pdf')
+        )
+    )
+
+    [extractor(path, folder='mydict') for path in mydict_files]
+    [extractor(path, folder='articles') for path in articles_files]
+
+
+def create_clear_txt() -> None:
+    """ Save all data as a processed txt file """
+    mydict_files = sorted(list(PROCESSED_DICT_PATH.rglob('*.txt')))
+    articles_files = sorted(list(PROCESSED_ARTICLE_PATH.rglob('*.txt')))
+
+    mydict_data = [file_processing(path) for path in mydict_files]
+    articles_data = [file_processing(path) for path in articles_files]
+
+    save_articles_data(articles_data)
 
 if __name__ == '__main__':
-    for path in mydict_files:
-        print(path)
-        extractor(path, folder='mydict')
+    if START_EXTRACTION:
+        start_extraction()
 
-    for path in articles_files:
-        print(path)
-        file_number = int(str(path)[37:-5])
-        extractor(path, folder='articles')
+    create_clear_txt()
 
 
