@@ -1,5 +1,5 @@
 """
-necessary paths and variables
+Necessary paths and variables.
 """
 
 from pathlib import Path

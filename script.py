@@ -1,3 +1,7 @@
+"""
+The main script for keyword searching.
+"""
+
 import pandas as pd
 from src.params import *
 from sklearn.feature_extraction.text import TfidfVectorizer

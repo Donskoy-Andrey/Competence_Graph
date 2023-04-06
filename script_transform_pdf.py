@@ -1,3 +1,7 @@
+"""
+The main script for creating a dictionary of articles.
+"""
+
 from pdfminer.high_level import extract_text
 from src.txt_file_processing import file_processing
 from typing import Optional
@@ -35,6 +39,7 @@ def save_articles_data(articles_data: list, mode='w') -> None:
 
 def start_extraction() -> None:
     """ Start extraction process """
+
     mydict_files = sorted(
         list(
             ORIGINAL_DICT_PATH.rglob('*.pdf')

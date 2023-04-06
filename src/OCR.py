@@ -1,5 +1,5 @@
 """
-interface for tesseract
+Interface for Tesseract-OCR
 """
 
 import pytesseract
@@ -8,12 +8,14 @@ from pdf2image import convert_from_path
 
 def get_ocr_file(pdf_path: str) -> str:
     """
-    convert pdf file to string variable
+    Convert pdf file to string variable.
     Args:
-        pdf_path: path to pdf file
+        pdf_path: str
+            Path to pdf file.
 
     Returns:
-        string (all pdf text)
+        text: str
+            All text from pdf-pages.
     """
     # Convert the PDF to an image
     images = convert_from_path(pdf_path)
