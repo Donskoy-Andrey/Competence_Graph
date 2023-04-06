@@ -1,3 +1,7 @@
+"""
+necessary paths and variables
+"""
+
 from pathlib import Path
 import pymorphy2
 

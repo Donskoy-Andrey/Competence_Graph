@@ -1,8 +1,20 @@
+"""
+interface for tesseract
+"""
+
 import pytesseract
 from pdf2image import convert_from_path
 
 
 def get_ocr_file(pdf_path: str) -> str:
+    """
+    convert pdf file to string variable
+    Args:
+        pdf_path: path to pdf file
+
+    Returns:
+        string (all pdf text)
+    """
     # Convert the PDF to an image
     images = convert_from_path(pdf_path)
 
