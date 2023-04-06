@@ -4,7 +4,7 @@
 The GPN company has a need to search for internal and external candidates for
 new positions. Currently this process is time consuming and based only on tests
 of the employee and does not cover possible competencies that they may have acquired before.
-acquired before.
+
 
 In order to select candidates who are not employed in the company 
 it is necessary to analyze their CVs and publications and compare 
