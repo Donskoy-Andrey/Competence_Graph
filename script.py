@@ -2,7 +2,7 @@ import pandas as pd
 from src.params import *
 from sklearn.feature_extraction.text import TfidfVectorizer
 from src.OCR import get_ocr_file
-from script_transrom_pdf import extractor, load_articles_data
+from script_transform_pdf import extractor, load_articles_data
 from src.txt_file_processing import file_processing
 
 
