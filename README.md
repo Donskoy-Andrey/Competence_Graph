@@ -21,16 +21,27 @@ a certain competency profile.
   ```linux
   pip install -r requirements.txt 
   ```
+2. **\[Optional]** Install Tesseract-OCR to get opportunity to work with unreadble pdf-files (e.g. broken encoding). 
 
-2. Run bash command in the root folder to create
+>Install Tesseract:
+```linux
+sudo apt-get install tesseract-ocr
+```
+
+> Install Russian language: <br> 
+```linux
+sudo wget -P /usr/share/tesseract-ocr/4.00/tessdata https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
+```
+
+3. Run bash command in the root folder to create
 clear text database:
 
   ```linux
   python3 script_transform_pdf.py 
   ```
-Note 1: You need the banch of pdf files in your **data/original_data** folder.
+> Note 1: You need the banch of pdf files in your **data/original_data** folder.
 
-Note 2: If you are doing it for the first time, change the **src/params.py** parameters from
+> Note 2: If you are doing it for the first time, change the **src/params.py** parameters from
 
 ```python
 START_EXTRACTION = False
@@ -44,13 +55,13 @@ START_EXTRACTION = True
 CREATE_CLEAR_TEXT = True
 ```
 
-Parameters can be reset to their original state at a later time not to waste time processing them again.
+> Parameters can be reset to their original state at a later time not to waste time processing them again.
 
-3. Run bash command in the root folder to get keywords from test file:
+4. Run bash command in the root folder to get keywords from test file:
   ```linux
   python3 script.py 
   ```
-Then entering name of the pdf-file from **data/test_folder**. For example:
+> Then entering name of the pdf-file from **data/test_folder**. For example:
 
 ```linux
 1.pdf
@@ -60,17 +71,17 @@ Then entering name of the pdf-file from **data/test_folder**. For example:
 ```linux
 data/result/result.xlsx
 ```
-
-5. Install Tesseract-OCR to get opportunity to work with unreadble pdf-files (e.g. broken encoding).
-
-5.1. Install Tesseract:
-```linux
-sudo apt-get install tesseract-ocr
-```
-
-5.2. Install Russian language:
-```linux
-sudo wget -P /usr/share/tesseract-ocr/4.00/tessdata https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
-```
 </details>
 
+<details>
+  <summary>Visualisation</summary>
+
+### Competence graph for a sample of 1000 Oil & Gas articles
+<p align="center">
+  <img src="images/graph.png">
+</p>
+
+> In the picture above, cluster 9 is a competence related to applied 
+mathematical calculations and research.
+
+</details>
