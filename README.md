@@ -66,7 +66,7 @@ CREATE_CLEAR_TEXT = True
 ```linux
 1.pdf
 ```
-4. Your result is located at:
+5. Your result is located at:
 
 ```linux
 data/result/result.xlsx
