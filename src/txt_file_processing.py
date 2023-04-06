@@ -25,6 +25,7 @@ def file_processing(path: str) -> str:
         text = [line.strip() for line in file.readlines()]
         text = ' '.join(text).replace('- ', '')
         text = re.sub(r'[^а-яё\sА-ЯЁ-]', '', text)
+        text = re.sub(r'-{2,}', '', text)
 
         current_stop_words = set(stop_words)
         pymorphy_results = list(map(lambda x: morph.parse(x), text.split()))
