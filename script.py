@@ -2,12 +2,17 @@
 The main script for keyword searching.
 """
 
+
 import pandas as pd
+import glob
+import os
 from src.params import *
 from sklearn.feature_extraction.text import TfidfVectorizer
 from src.OCR import get_ocr_file
 from script_transform_pdf import extractor, load_articles_data
 from src.txt_file_processing import file_processing
+from pdfminer.high_level import extract_text
+
 
 mydict_files = sorted(list(PROCESSED_DICT_PATH.rglob('*.txt')))
 articles_files = sorted(list(PROCESSED_ARTICLE_PATH.rglob('*.txt')))
@@ -59,8 +64,7 @@ def check_new_file(path: str, fromOCR: bool = False) -> pd.DataFrame():
         {'index': 'term', f'{current_file_path.name}': 'value'}, axis=1
     )
 
-
-def main() -> None:
+def process_files():
     test_file = input('Enter file name from test_folder. Example: file.pdf\n')
     check_path = TEST_FOLDER_PATH + test_file
 
@@ -81,6 +85,31 @@ def main() -> None:
     if df.loc[1, 'value'] < 0.05:
         start_ocr(test_file)
 
+def main() -> None:
+    folder_name = input('Enter folder name: ')
+
+    if len(folder_name) == 0:
+        folder_name = "data/competence_articles"
+
+    all_paths = glob.glob(f"{folder_name}/*.pdf")
+    path_to_save = f"{folder_name}/result.txt"
+    tmp_file = f"{folder_name}/tmp.txt"
+
+    with open(path_to_save, "w") as processed_file:
+        for path in all_paths:
+            print('Reading Data:', path)
+            text = extract_text(path)
+
+            with open(tmp_file, "w") as outfile:
+                outfile.write(text)
+
+            processed_text = file_processing(tmp_file)
+            processed_file.write(processed_text + '\n')
+
+    os.remove(tmp_file)
 
 if __name__ == '__main__':
+    # Run this to get TF-IDF values from article
+    # process_files()
+
     main()
