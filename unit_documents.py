@@ -1,7 +1,7 @@
 """
 The main script for keyword searching.
 """
-import io
+
 
 import pandas as pd
 import glob
@@ -63,45 +63,9 @@ def check_new_file(path: str, fromOCR: bool = False) -> pd.DataFrame():
         {'index': 'term', f'{current_file_path.name}': 'value'}, axis=1
     )
 
-
-# def main() -> None:
-#     folder_name = input('Enter folder name: ')
-#     file_filter = folder_name + '/*.pdf'
-#     save_file = folder_name + "/result.txt"
-#     read_files = glob.glob(file_filter)
-#     with open(save_file, "w") as outfile:
-#         for f in read_files:
-#             if f != save_file:
-#                 print('reading ', f)
-#                 text = extract_text(f)
-#                 outfile.write(text+'\n')
-#
-#     print('processing . . . ')
-#     file_processing(save_file)
-
-
-def main() -> None:
-    folder_name = input('Enter folder name: ')
-    file_filter = folder_name + '/*.pdf'
-    save_file = folder_name + "/result.txt"
-    read_files = glob.glob(file_filter)
-    processed_text=''
-    with open(save_file, "w") as processed_file:
-        for f in read_files:
-            if f != save_file:
-                print('reading ', f)
-                text = extract_text(f)
-                f_txt = folder_name+'/tmp.txt'
-                with open(f_txt,"w") as outfile:
-                    outfile.write(text)
-                processed_text = file_processing(f_txt)
-                processed_file.write(processed_text+'\n')
-
-
-
-
-def process_files(filename):
-    check_path = TEST_FOLDER_PATH + filename
+def process_files():
+    test_file = input('Enter file name from test_folder. Example: file.pdf\n')
+    check_path = TEST_FOLDER_PATH + test_file
 
     df = check_new_file(check_path)
     all_names = df.term.head(N_SEARCH_ROWS).values
@@ -118,7 +82,22 @@ def process_files(filename):
     df.head(N_ROWS).to_excel(PATH_TO_SAVE, encoding='utf-8')
 
     if df.loc[1, 'value'] < 0.05:
-        start_ocr(filename)
+        start_ocr(test_file)
+
+def main() -> None:
+    folder_name = input('Enter folder name: ')
+    read_files = glob.glob(f"{folder_name}/*.pdf")
+    save_file = f"{folder_name}/result.txt"
+    with open(save_file, "w") as processed_file:
+        for f in read_files:
+            if f != save_file:
+                print('reading ', f)
+                text = extract_text(f)
+                f_txt = folder_name+'/tmp.txt'
+                with open(f_txt,"w") as outfile:
+                    outfile.write(text)
+                processed_text = file_processing(f_txt)
+                processed_file.write(processed_text+'\n')
 
 if __name__ == '__main__':
     main()
